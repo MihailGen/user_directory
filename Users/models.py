@@ -6,7 +6,7 @@ from django.db import models
 class CustomUserManager(UserManager):
     use_in_migrations = True
 
-    def create_user(self, username=None, email=None, password=None, phone=None, address=None, birthdate=None,
+    def create_user(self, email=None, password=None, phone=None, address=None, birthdate=None,
                     gender=None, **extra_fields):
         # def create_user(self,  email=None, password=None, phone=None, **extra_fields):
         if not email:
@@ -16,7 +16,7 @@ class CustomUserManager(UserManager):
         user = self.model(email=email, **extra_fields)
         # user = self.model(username=username, **extra_fields)
 
-        user.username = username
+        #user.username = username
         user.phone = phone
         user.address = address
         user.password = make_password(password)
@@ -45,13 +45,13 @@ class User(AbstractUser):
         ('F', 'Female'),
         ('O', 'Other'),
     ]
-    # username = None
-    username = models.CharField(max_length=120, unique=True, null=True, blank=True)
+    username = None
+    #username = models.CharField(max_length=120, unique=True, null=True, blank=True)
     phone = models.CharField(max_length=12, unique=True, null=True, blank=True)
-    email = models.EmailField(max_length=254, unique=True, null=False, blank=False)
+    email = models.EmailField(max_length=254, unique=True, null=True, blank=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True, null=True)
-    birthdate = models.DateField(lank=True, null=True)
+    birthdate = models.DateField(blank=True, null=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 

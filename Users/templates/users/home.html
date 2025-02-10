@@ -11,19 +11,24 @@
 <div class="container">
     <form method="post" action="{% url 'add_person' %}">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Ммя:">
-        <input type="text" name="name" placeholder="Фамилия:">
-        <input type="text" name="email" placeholder="Эл. почта:">
-        <input type="text" name="email" placeholder="Номер телефона:">
-        <input type="text" name="email" placeholder="Дата рождения:">
-        <input type="text" name="email" placeholder="Пол:">
-        <button type="submit" name="add">Добавить</button>
+        <input type="text" name="username" placeholder="Username:">
+        <input type="text" name="email" placeholder="Email:">
+        <input type="text" name="phone" placeholder="Phone:">
+        <input type="text" name="address" placeholder="Address:">
+        <input type="text" name="birthdate" placeholder="Birthdate:">
+        <input type="text" name="gender" placeholder="Gender:">
+        <button type="submit" name="add">Add</button>
     </form>
     <ul>
         {% if people %}
         {% for person in people %}
         <li>
+            {{ person.username }}
             {{ person.email }}
+            {{ person.phone }}
+            {{ person.address }}
+            {{ person.birthdate }}
+            {{ person.gender }}
             <form method="post" action="{% url 'delete_person' person.id %}">
                 {% csrf_token %}
                 <button type="submit" name="delete">Удалить</button>

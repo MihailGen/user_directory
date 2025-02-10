@@ -9,10 +9,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from Users.serializers import RegisterSerializer
 #---------------------------
+from asyncio import sleep
+from asgiref.sync import sync_to_async
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
+from .models import Person
+#---------------------------
 
 def base(request):
     return render(request, "users/base.html")
-
 
 
 # Эндпоинт для регистрации пользователя с использование Django - форм
@@ -34,3 +39,30 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
 
+
+def home(request):
+    #people = Person.objects.all()  # Получение списка пользователей
+    people = User.objects.all()  # Получение списка пользователей
+    return render(request, 'users/home.html', {'people': people})
+
+
+@require_POST
+async def add_person(request):
+    await sleep(1)  # Имитируем ожидание в 5 секунд
+    email = request.POST.get('email')
+    phone = request.POST.get('phone')
+    address = request.POST.get('address')
+    birthdate = request.POST.get('birthdate')
+    gender = request.POST.get('gender')
+    #await sync_to_async(Person.objects.create)(full_name=full_name)
+    await sync_to_async(User.objects.create)(email=email,phone=phone, address= address, birthdate=birthdate,
+                                             gender=gender)
+    return redirect('home')
+
+
+@require_POST
+def delete_person(request, person_id):
+    #person = get_object_or_404(Person, pk=person_id)
+    person = get_object_or_404(User, pk=person_id)
+    person.delete()
+    return redirect('home')

@@ -1,0 +1,38 @@
+{% extends "users/base.html" %}
+
+{% block title %}Список пользователей{% endblock %}
+
+{% block extrahead %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'user_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" action="{% url 'add_person' %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Ммя:">
+        <input type="text" name="name" placeholder="Фамилия:">
+        <input type="text" name="email" placeholder="Эл. почта:">
+        <input type="text" name="email" placeholder="Номер телефона:">
+        <input type="text" name="email" placeholder="Дата рождения:">
+        <input type="text" name="email" placeholder="Пол:">
+        <button type="submit" name="add">Добавить</button>
+    </form>
+    <ul>
+        {% if people %}
+        {% for person in people %}
+        <li>
+            {{ person.email }}
+            <form method="post" action="{% url 'delete_person' person.id %}">
+                {% csrf_token %}
+                <button type="submit" name="delete">Удалить</button>
+            </form>
+        </li>
+        {% endfor %}
+        {% else %}
+        <li>Пользователей нет</li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

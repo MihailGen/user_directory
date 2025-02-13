@@ -29,6 +29,7 @@ def registration_view(request):
             return redirect('base')
     else:
         form = RegistrationForm()
+
     return render(request, 'users/register.html', {'form': form})
 
 
@@ -40,28 +41,25 @@ class RegisterView(generics.CreateAPIView):
 
 
 def home(request):
-    #people = Person.objects.all()  # Получение списка пользователей
     people = User.objects.all()  # Получение списка пользователей
     return render(request, 'users/home.html', {'people': people})
 
 
 @require_POST
 async def add_person(request):
-    await sleep(1)  # Имитируем ожидание в 5 секунд
+    username = request.POST.get('username')
     email = request.POST.get('email')
     phone = request.POST.get('phone')
     address = request.POST.get('address')
     birthdate = request.POST.get('birthdate')
     gender = request.POST.get('gender')
-    #await sync_to_async(Person.objects.create)(full_name=full_name)
-    await sync_to_async(User.objects.create)(email=email,phone=phone, address= address, birthdate=birthdate,
+    await sync_to_async(User.objects.create)(username=username, email=email,phone=phone, address= address, birthdate=birthdate,
                                              gender=gender)
     return redirect('home')
 
 
 @require_POST
 def delete_person(request, person_id):
-    #person = get_object_or_404(Person, pk=person_id)
     person = get_object_or_404(User, pk=person_id)
     person.delete()
     return redirect('home')

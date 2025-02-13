@@ -8,14 +8,14 @@ services:
       depends_on:
         - db
       environment:
-        DATABASE_URL: postgres://user:password@db/Users
+        DATABASE_URL: postgres://user:2d5864a2@db/Users
 
     db:
-      image: postgres:13
+      image: postgres:17
       environment:
-        POSTGRES_DB: Users
-        POSTGRES_USER: user
-        POSTGRES_PASSWORD: password
+        POSTGRES_DB: Users_Dir
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: 2d5864a2
       volumes:
         - db_data:/var/lib/postgresql/data
 

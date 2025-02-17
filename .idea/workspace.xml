@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="615da9e3-fe03-449d-a989-3dab0d0fee33" name="Changes" comment="Переход на postgres">
+    <list default="true" id="615da9e3-fe03-449d-a989-3dab0d0fee33" name="Changes" comment="ci-cd.yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/users/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users_Directory/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Directory/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +30,7 @@
 }</component>
   <component name="ProjectId" id="2sSeBVJC1GQql75QKfBjmtZWait" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -55,7 +49,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;promo.remoteSsh&quot;
   }
 }</component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Users_Direcory" />
       <option name="ENV_FILES" value="" />
@@ -96,8 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -157,13 +151,33 @@
       <option name="project" value="LOCAL" />
       <updated>1739292588005</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ci-cd.yml">
+      <option name="closed" value="true" />
+      <created>1739465300892</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739465300892</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="create registration with Django forms" />
     <MESSAGE value="Переход на postgres" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переход на postgres" />
+    <MESSAGE value="ci-cd.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci-cd.yml" />
   </component>
 </project>

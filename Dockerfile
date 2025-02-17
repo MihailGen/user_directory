@@ -7,12 +7,16 @@ ENV PYTHONBUFFERED 1
 
 RUN pip install --upgrade pip
 
+RUN useradd -rms /bin/bash app && chmod 777 /opt /run
+
 WORKDIR /app
 
-COPY . .
+RUN mkdir /app/static && chown -R app:app /app && chmod 755 /app
+
+COPY --chown=app:app . .
 
 RUN pip install -r requirements.txt
 
 USER app
 
-CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "Users_Directory.wsgi:application"]

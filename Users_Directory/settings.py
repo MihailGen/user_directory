@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'Users_Directory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Users_Dir',  # Имя вбазы данных
-        'USER': 'postgres',  # Имя пользователя
-        'PASSWORD': '2d5864a2',  # Пароль пользователя
-        'HOST': 'localhost',  # Хост, по умолчанию 'localhost', опционально
-        'PORT': '5432',  # Порт, по умолчанию '5432', опционально
+        'NAME': os.getenv('POSTGRES_DB', 'Users'),  # Имя вбазы данных
+        'USER': os.getenv('POSTGRES_USER', 'postgres'),  # Имя пользователя
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '2d5864a2'),  # Пароль пользователя
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),  # Хост, по умолчанию 'localhost', опционально
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),  # Порт, по умолчанию '5432', опционально
     }
 }
 
@@ -125,6 +125,7 @@ USE_TZ = True
 # STATIC_ROOT = BASE_DIR / 'static/'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
+#STATIC_ROOT = 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

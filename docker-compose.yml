@@ -1,35 +1,39 @@
 version: "3.8"
 
 services:
-    web:
-      build: .
-      ports:
-        - "8000:8000"
-      depends_on:
-        - db
-      environment:
-        DATABASE_URL: postgres://user:2d5864a2@db/Users
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: Users_Dir
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2d5864a2
+    volumes:
+      - db_data:/var/lib/postgresql/data
 
-    db:
-      image: postgres:17
-      environment:
-        POSTGRES_DB: Users_Dir
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: 2d5864a2
-      volumes:
-        - db_data:/var/lib/postgresql/data
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - static_volume:/app/static
+    environment:
+      DATABASE_URL: postgres://user:2d5864a2@db/Users
 
-    prometheus:
-      image: prom/prometheus:latest
-      volumes:
-        - ./prometheus.yml:/etc/prometheus/prometheus.yml
-      ports:
-        - "9090:9090"
 
-    grafana:
-      image: grafana/grafana:latest
-      ports:
-        - "3000:3000"
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
 
 volumes:
+  static_volume:
   db_data:

@@ -1,22 +1,21 @@
-version: "3.8"
+version: "3.9"
 
 services:
   db:
     image: postgres:17
     container_name: db_postgres
-    environment:
-      POSTGRES_DB: Users
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 2d5864a2
     volumes:
-      - ~/.pg/db_data:/var/lib/postgresql/data
+      - ~/.pg/db_data/Users_Directory:/var/lib/postgresql/data
+    env_file:
+      - .env
+
 
   web:
     build: .
     ports:
       - "8000:8000"
     depends_on:
-      - db_postgres
+      - db
     volumes:
       - static_volume:/app/static
     env_file:
@@ -33,12 +32,13 @@ services:
     image: app_nginx
     volumes:
         - static_volume:/app/static
-        - certs:/etc/nginx/certs
-        - vhost:/etc/nginx/vhost.d
-        - html:/usr/share/nginx/html
-        - /var/run/docker.sock:/tmp/docker.sock:ro
+       # - static_volume:/app/static
+       # - certs:/etc/nginx/certs
+       # - vhost:/etc/nginx/vhost.d
+       # - html:/usr/share/nginx/html
+       # - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
-        - youtube_project
+        - web
     ports:
         - "${NGINX_EXTERNAL_PORT}:80"
         - "${NGINX_EXTERNAL_SSL_PORT}:443"

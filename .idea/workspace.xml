@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="615da9e3-fe03-449d-a989-3dab0d0fee33" name="Changes" comment="Добавлил .env">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/templates/users/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Users/templates/users/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users_Directory/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users_Directory/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

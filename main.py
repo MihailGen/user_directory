@@ -1,7 +1,11 @@
-# This is a sample Python script.
+import logging
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+def main():
+    logger = logging.getLogger(__name__)
+    logger.info('Запуск основного приложения')
 
 
 def print_hi(name):

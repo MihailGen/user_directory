@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="615da9e3-fe03-449d-a989-3dab0d0fee33" name="Changes" comment="Добавлил .env">
+    <list default="true" id="615da9e3-fe03-449d-a989-3dab0d0fee33" name="Changes" comment="Добавил Username">
+      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prometheus.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;promo.remoteSsh&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Miha\PycharmProjects\Users_Direcory\" />
+    </key>
+  </component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Users_Direcory" />
@@ -174,7 +183,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739913896947</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавил test">
+      <option name="closed" value="true" />
+      <created>1740002126082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740002126082</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Добавил Username">
+      <option name="closed" value="true" />
+      <created>1740002165639</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740002165639</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +219,8 @@
     <MESSAGE value="Переход на postgres" />
     <MESSAGE value="ci-cd.yml" />
     <MESSAGE value="Добавлил .env" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлил .env" />
+    <MESSAGE value="Добавил test" />
+    <MESSAGE value="Добавил Username" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил Username" />
   </component>
 </project>

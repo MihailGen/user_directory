@@ -22,22 +22,22 @@ class AuthenticatedAPITests(APITestCase):
         url = reverse('add_person')
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code,
-                         status.HTTP_405_METHOD_NOT_ALLOWED)  # Доступ разрешен для аутентифицированного пользователя
+                         status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def test_delete_personn(self):
         url = reverse('add_person')
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code,
-                         status.HTTP_405_METHOD_NOT_ALLOWED)  # Доступ разрешен для аутентифицированного пользователя
+                         status.HTTP_405_METHOD_NOT_ALLOWED)
 
     def test_api_register(self):
         url = reverse('register')
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code,
-                         status.HTTP_200_OK)  # Доступ разрешен для аутентифицированного пользователя
+                         status.HTTP_200_OK)
 
     def test_home(self):
         url = reverse('home')
         response = self.client.get(url, format='json')
         self.assertEqual(response.status_code,
-                         status.HTTP_200_OK)  # Доступ разрешен для аутентифицированного пользователя
+                         status.HTTP_200_OK)

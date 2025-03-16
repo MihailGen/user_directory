@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'Users',
     'rest_framework',
     'rest_framework_simplejwt',
+    'kinopoisk',
 ]
 
 REST_FRAMEWORK = {
